@@ -17,6 +17,8 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
+            'order_ref' => fake()->word(),
+            'customer_name' => fake()->name()
         ];
     }
 }

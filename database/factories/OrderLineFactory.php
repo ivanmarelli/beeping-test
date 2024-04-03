@@ -17,7 +17,9 @@ class OrderLineFactory extends Factory
     public function definition(): array
     {
         return [
-
+            'order_id' => \App\Models\Order::all()->random()->id,
+            'qty' => fake()->randomNumber(1,6), //rand(1,8),
+            'product_id' => \App\Models\Product::all()->random()->id,
         ];
     }
 }

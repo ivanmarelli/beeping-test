@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Order;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -10,7 +12,19 @@ class OrderLine extends Model
     use HasFactory;
 
     protected $fillable = [
-        'order_ref',
-        'customer_name',
+        'order_id',
+        'qty',
+        'product_id',
     ];
+
+    public function order()
+    {
+        return $this->belongsTo(Order::class);
+    }
+
+    public function product()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
 }

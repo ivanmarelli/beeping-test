@@ -9,8 +9,10 @@ class Executed extends Model
 {
     use HasFactory;
 
+    protected $table = 'executed';
+
     protected $fillable = [
-        'order_ref',
-        'customer_name',
+        'total_orders',
+        'total_cost',
     ];
 }

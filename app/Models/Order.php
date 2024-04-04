@@ -20,4 +20,14 @@ class Order extends Model
         return $this->hasMany(OrderLine::class);
     }
 
+    /**
+     * devuelve cantidad total de productos
+     * 
+     **/
+
+    public function totalQty()
+    {
+        return $this->orderLines->sum('qty');
+    }
+
 }
